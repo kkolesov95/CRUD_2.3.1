@@ -48,7 +48,7 @@ public class UsersController {
     }
 
     @GetMapping("/{id}/edit")
-    public String edit(Model model, @PathVariable("id") int id) {
+    public String edit(Model model, @PathVariable("id") long id) {
         model.addAttribute("user", userDAO.show(id));
         return "users/edit";
     }
@@ -62,7 +62,7 @@ public class UsersController {
     }
 
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable("id") int id) {
+    public String delete(@PathVariable("id") long id) {
         userDAO.delete(id);
         return "redirect:/users";
     }

@@ -6,12 +6,12 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column
     @NotEmpty(message = "Name shouldn't be empty")
@@ -31,18 +31,18 @@ public class User {
 
     }
 
-    public User(Long id, String name, String lastname, byte age) {
+    public User(long id, String name, String lastname, byte age) {
         this.id = id;
         this.name = name;
         this.lastname = lastname;
         this.age = age;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
